@@ -1,7 +1,6 @@
 import React from 'react'
 import Fab from '@material-ui/core/Fab'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import { Link } from 'react-router-dom'
 import Tooltip from '@material-ui/core/Tooltip'
 import Sticky from 'react-stickynode'
@@ -29,7 +28,7 @@ const onVisibilityChange = (flashing, setFlashing, i) => isVisible => {
   visiblity[i] = isVisible
 }
 
-export const MovementPage = ({
+export const OffensePage = ({
   classes,
   sections,
   videos,
@@ -59,28 +58,17 @@ export const MovementPage = ({
       </div>
     ))}
     <Sticky>
-      <Tooltip title="Back to customizing your switch" placement="top">
+      <Tooltip title="Back to defending" placement="top">
         <Fab
           color="primary"
           style={{ position: 'absolute', bottom: 25, left: 25 }}
           component={Link}
-          to="/switch">
+          to="/defending">
           <ArrowBackIcon />
-        </Fab>
-      </Tooltip>
-    </Sticky>
-    <Sticky>
-      <Tooltip title="Learn about attacking" placement="top">
-        <Fab
-          color="primary"
-          style={{ position: 'absolute', bottom: 25, right: 25 }}
-          component={Link}
-          to="/attacking">
-          <ArrowForwardIcon />
         </Fab>
       </Tooltip>
     </Sticky>
   </div>
 )
 
-export default MovementPage
+export default OffensePage

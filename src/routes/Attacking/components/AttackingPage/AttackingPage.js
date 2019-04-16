@@ -29,7 +29,7 @@ const onVisibilityChange = (flashing, setFlashing, i) => isVisible => {
   visiblity[i] = isVisible
 }
 
-export const MovementPage = ({
+export const AttackingPage = ({
   classes,
   sections,
   videos,
@@ -59,23 +59,23 @@ export const MovementPage = ({
       </div>
     ))}
     <Sticky>
-      <Tooltip title="Back to customizing your switch" placement="top">
+      <Tooltip title="Back to movement" placement="top">
         <Fab
           color="primary"
           style={{ position: 'absolute', bottom: 25, left: 25 }}
           component={Link}
-          to="/switch">
+          to="/movement">
           <ArrowBackIcon />
         </Fab>
       </Tooltip>
     </Sticky>
     <Sticky>
-      <Tooltip title="Learn about attacking" placement="top">
+      <Tooltip title="Learn about defending" placement="top">
         <Fab
           color="primary"
           style={{ position: 'absolute', bottom: 25, right: 25 }}
           component={Link}
-          to="/attacking">
+          to="/defending">
           <ArrowForwardIcon />
         </Fab>
       </Tooltip>
@@ -83,4 +83,4 @@ export const MovementPage = ({
   </div>
 )
 
-export default MovementPage
+export default AttackingPage

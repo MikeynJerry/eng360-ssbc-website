@@ -2,22 +2,65 @@
   position: absolute;
   left: calc(50vw - 350px - 133px - 10vw);
   max-width: 133px;
+  top: calc((100vh - 410px) / 2);
 }
 
 .switch {
   margin: 0 auto;
   max-width: 700px;
+  position: relative;
 }
 
 .full-switch {
   margin: 0 auto;
   max-width: 962px;
+  position: relative;
+}
+
+.video {
+  position: absolute;
+  left: 206.6px;
+  top: 46px;
+  pointer-events: none;
+}
+
+.video2 {
+  position: absolute;
+  left: 71.6px;
+  top: 46.9px;
+  pointer-events: none;
 }
 
 .right-joycon {
   position: absolute;
   right: calc(50vw - 350px - 133px - 10vw);
   max-width: 133px;
+  top: calc((100vh - 410px) / 2);
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 15px;
+  border-color: transparent transparent #fefefe transparent;
+}
+
+.up {
+  transform: translate(55px, 35px);
+}
+
+.left {
+  transform: rotate(-90deg) translate(-92px, 0px);
+}
+
+.right {
+  transform: rotate(90deg) translate(92px, -110px);
+}
+
+.down {
+  transform: rotate(180deg) translate(-55px, -150px);
 }
 
 .gray {
@@ -119,4 +162,94 @@
 
 .fil6 {
   fill: url(#id3);
+}
+
+.slow {
+  animation-name: arrow;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.fast {
+  animation-name: arrow;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.flashing-bumper {
+  animation-name: bumper;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.flashing-circle {
+  animation-name: circle;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.flashing-text {
+  animation-name: text;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bumper {
+  0% {
+    fill: #30363a;
+  }
+
+  50% {
+    fill: #fefefe;
+    fill-rule: nonzero;
+  }
+
+  100% {
+    fill: #30363a;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes circle {
+  0% {
+    fill: #56616a;
+  }
+
+  50% {
+    fill: #fefefe;
+    fill-rule: nonzero;
+  }
+
+  100% {
+    fill: #56616a;
+  }
+}
+
+@keyframes text {
+  0% {
+    fill: #fefefe;
+    fill-rule: nonzero;
+  }
+
+  50% {
+    fill: #56616a;
+  }
+
+  100% {
+    fill: #fefefe;
+    fill-rule: nonzero;
+  }
 }

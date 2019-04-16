@@ -5,50 +5,41 @@ export default theme => ({
   container: {
     display: 'flex'
   },
-  buttons: {
-    display: 'block',
-    marginTop: 25
-  },
-  left: {
-    marginRight: 25
-  },
-  right: {
-    marginLeft: 25
-  },
   middle: {},
   fab: {
     margin: '14px',
-    display: 'block'
+    display: 'block',
+    paddingLeft: '10px',
+    paddingRight: '10px',
+    marginLeft: '2px',
+    marginRight: '2px',
+    height: '30px',
+    width: '30px'
   },
   spacer: {
     width: '100%',
     height: 'calc(15vh - 64px)'
   },
   card: {
-    maxWidth: 345,
-    width: 345,
+    maxWidth: 250,
+    width: 250,
+    height: 285,
     margin: theme.spacing.unit * 0.5
   },
   cardContainer: {
+    position: 'absolute',
+    left: 'calc(50vw - 255px)',
+    top: 65,
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'row',
     flexWrap: 'wrap',
-    '-webkit-flex-flow': 'row wrap'
+    '-webkit-flex-flow': 'row wrap',
+    width: '600px',
+    height: '340px'
   },
   media: {
-    height: 250,
+    height: 175,
     backgroundSize: 'contain'
-  },
-  leftText: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    hyphens: 'none'
-  },
-  rightText: {
-    position: 'absolute',
-    top: 0,
-    right: 0
   },
   scrollbar: {
     width: '100vw !important',
@@ -59,5 +50,37 @@ export default theme => ({
   selected: {
     border: 'solid 3px',
     color: 'aqua'
+  },
+  paddingNone: {
+    paddingRight: '0',
+    paddingLeft: '0'
+  },
+  switch: {
+    position: 'absolute',
+    display: 'block',
+    left: 'calc(50vw - (961.996px / 2))',
+    top: '10px'
+  },
+  leftButtons: {
+    position: 'absolute',
+    left: 'calc(50vw - (961.996px / 2) - 35px)',
+    top: 'calc(410.309px / 2 - 100px)'
+  },
+  rightButtons: {
+    position: 'absolute',
+    right: 'calc(50vw - (961.996px / 2) - 35px)',
+    top: 'calc(410.309px / 2 - 100px)'
+  },
+  spacers: {
+    color: 'black'
+  },
+  whitebg: {
+    backgroundColor: 'transparent'
+  },
+  howTo: {
+    position: 'absolute',
+    top: 'calc(410.309px + 40px)',
+    left: 'calc(50vw - (961.996px / 2))',
+    width: '961.996px'
   }
 })

@@ -6,6 +6,9 @@ import NotFoundRoute from './NotFound'
 import CharactersRoute from './Characters'
 import MovementRoute from './Movement'
 import SwitchRoute from './Switch'
+import AttackingRoute from './Attacking'
+import DefendingRoute from './Defending'
+import OffenseRoute from './Offense'
 
 export default function createRoutes(store) {
   return (
@@ -16,7 +19,10 @@ export default function createRoutes(store) {
         [
           CharactersRoute,
           MovementRoute,
-          SwitchRoute
+          SwitchRoute,
+          AttackingRoute,
+          DefendingRoute,
+          OffenseRoute
           /* Add More Routes Here */
         ].map((settings, index) => (
           <Route key={`Route-${index}`} {...settings} />

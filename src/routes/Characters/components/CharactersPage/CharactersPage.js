@@ -7,6 +7,12 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
+import Fab from '@material-ui/core/Fab'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+import { Link } from 'react-router-dom'
+import Tooltip from '@material-ui/core/Tooltip'
+import Sticky from 'react-stickynode'
 import Typography from '@material-ui/core/Typography'
 import { Slide } from '@material-ui/core'
 
@@ -19,14 +25,11 @@ const CharacterCard = ({ character, classes, image, selectCharacter }) => (
         title={character}
         style={{ pointerEvents: 'none' }}
       />
-      <CardContent>
+      <CardContent style={{ minHeight: 154.4 }}>
         <Typography gutterBottom variant="h5" component="h2">
           {character.name}
         </Typography>
-        <Typography component="p">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
+        <Typography component="p">{character.description}</Typography>
       </CardContent>
     </CardActionArea>
     <CardActions>
@@ -54,33 +57,57 @@ export const CharactersPage = ({
   characterList,
   selectCharacter
 }) => (
-  <Scrollbar className={classes.scrollbar}>
-    <div className={classes.root}>
-      <div className={classes.tiles}>
-        {characterList.map((characterName, i) => {
-          const character = characters[characterName]
-          const { bigLink: link } = character
-          const image = `https://www.ssbwiki.com/images/thumb/${link}`
-          return (
-            <Slide
-              key={characterName}
-              direction="up"
-              in
-              mountOnEnter
-              unmountOnExit
-              timeout={{ enter: 300 + 100 * i }}>
-              <CharacterCard
-                character={character}
-                image={image}
-                classes={classes}
-                selectCharacter={selectCharacter}
-              />
-            </Slide>
-          )
-        })}
+  <div>
+    <Scrollbar className={classes.scrollbar}>
+      <div className={classes.root}>
+        <div className={classes.tiles}>
+          {characterList.map((characterName, i) => {
+            const character = characters[characterName]
+            const { bigLink: link } = character
+            const image = `https://www.ssbwiki.com/images/thumb/${link}`
+            return (
+              <Slide
+                key={characterName}
+                direction="up"
+                in
+                mountOnEnter
+                unmountOnExit
+                timeout={{ enter: 300 + 100 * i }}>
+                <CharacterCard
+                  character={character}
+                  image={image}
+                  classes={classes}
+                  selectCharacter={selectCharacter}
+                />
+              </Slide>
+            )
+          })}
+        </div>
       </div>
-    </div>
-  </Scrollbar>
+    </Scrollbar>
+    <Sticky>
+      <Tooltip title="Back to the homepage" placement="top">
+        <Fab
+          color="primary"
+          style={{ position: 'absolute', bottom: 25, left: 25 }}
+          component={Link}
+          to="/">
+          <ArrowBackIcon />
+        </Fab>
+      </Tooltip>
+    </Sticky>
+    <Sticky>
+      <Tooltip title="Customize your switch" placement="top">
+        <Fab
+          color="primary"
+          style={{ position: 'absolute', bottom: 25, right: 25 }}
+          component={Link}
+          to="/switch">
+          <ArrowForwardIcon />
+        </Fab>
+      </Tooltip>
+    </Sticky>
+  </div>
 )
 
 CharactersPage.propTypes = {

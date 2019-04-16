@@ -2,14 +2,14 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { withProps, withStateHandlers } from 'recompose'
 import { withStyles } from '@material-ui/core/styles'
-import styles from './MovementPage.styles'
+import styles from './AttackingPage.styles'
 import {
   sections,
   videos,
   switches,
   spacing,
   flashing
-} from 'markdown/movement.js'
+} from 'markdown/attacking.js'
 
 export default compose(
   connect(({ ui: { mode }, character: { name: character } }) => ({

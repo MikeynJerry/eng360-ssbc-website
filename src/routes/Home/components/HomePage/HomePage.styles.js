@@ -1,59 +1,62 @@
 export default theme => ({
   root: {
-    ...theme.flexColumnCenter
+    ...theme.flexRowCenter,
+    width: '100%',
+    backgroundColor: 'black',
+    display: 'flex'
   },
-  section: {
-    ...theme.flexColumnCenter
+  col: {
+    ...theme.flexColumnCenter,
+    display: 'block',
+    width: '100%'
   },
   circle: {
     position: 'absolute',
     top: 'calc(50vh - 20vh)',
-    width: '20vw',
-    height: '20vw',
-    borderRadius: '50%',
+    zIndex: '100',
+    width: '30%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    height: 'auto',
+    backgroundColor: 'black',
+    borderRadius: '100%'
+  },
+  quad1: {
+    backgroundColor: 'red',
     backgroundImage:
-      'url(https://i.kinja-img.com/gawker-media/image/upload/s--NrSaE4S8--/c_scale,f_auto,fl_progressive,pg_1,q_80,w_800/iuzt6qgk49nkz4dwr1dz.jpg)',
-    backgroundPosition: '50% 50%',
-    zIndex: '100'
+      'url(https://www.ssbwiki.com/images/thumb/f/ff/Sidestep_SSB4.JPG/800px-Sidestep_SSB4.JPG)'
   },
-  smash: {
-    position: 'absolute',
-    left: 0,
-    top: 64,
-    height: 'calc(100vh - 35vh - 84px)',
-    width: 'calc(50vw - 10px)',
-    backgroundColor: 'red'
+  quad2: {
+    backgroundColor: 'green',
+    backgroundImage:
+      'url(https://www.ssbwiki.com/images/thumb/5/5b/BowserShieldSSB4.png/800px-BowserShieldSSB4.png)'
   },
-  spirits: {
-    position: 'absolute',
-    left: 0,
-    bottom: 0,
-    height: 'calc(50vh - 64px)',
-    width: '48vw',
-    backgroundColor: 'lightgreen'
+  quad3: {
+    backgroundColor: 'blue',
+    backgroundImage:
+      'url(https://vignette.wikia.nocookie.net/ssb/images/6/67/Foxupatyourside.jpg/revision/latest?cb=20141017055911)'
   },
-  online: {
-    position: 'absolute',
-    right: 0,
-    bottom: 0,
-    height: 'calc(48vh - 64px)',
-    width: '52vw',
-    backgroundColor: 'yellow'
+  quad4: {
+    backgroundColor: 'yellow',
+    backgroundImage:
+      'url(https://www.ssbwiki.com/images/thumb/c/c2/FoxSSB4DashAttack.png/1200px-FoxSSB4DashAttack.png)'
   },
-  vault: {
+  header: {
     position: 'absolute',
-    right: 0,
-    bottom: 'calc(48vh - 64px)',
-    height: '20vh',
-    width: '52vw',
-    backgroundColor: 'pink'
+    color: 'black',
+    left: '50%',
+    top: '80%',
+    textAlign: 'center',
+    width: '66%',
+    transform: 'translateX(-50%) translateY(-50%)'
   },
-  games: {
+  quadIcon: {
     position: 'absolute',
-    right: 0,
-    top: 64,
-    height: 'calc(100vh - (48vh - 64px) - 20vh - 64px)',
-    width: '52vw',
-    backgroundColor: 'blue'
+    left: '50%',
+    top: '50%',
+    width: '66%',
+    maxWidth: '300px',
+    height: 'auto',
+    transform: 'translateX(-50%) translateY(-50%)'
   }
 })

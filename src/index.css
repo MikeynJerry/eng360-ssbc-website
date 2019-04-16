@@ -23,6 +23,18 @@ button *,
   cursor: url('assets/clickable.cur'), auto !important;
 }
 
+img {
+  pointer-events: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+a:hover {
+  color: inherit !important;
+}
+
 *,
 *:before,
 *:after {

@@ -90,7 +90,7 @@ export class Navbar extends React.Component {
               color="inherit"
               className={classes.flex}
               component={Link}
-              to="/characters">
+              to="/">
               Super Smash Brothers Ultimate Guide
             </Typography>
             <Typography variant="h6" color="inherit">
