@@ -4,5 +4,12 @@ export default theme => ({
   },
   list: {
     width: 250
+  },
+  nested: {
+    paddingLeft: theme.spacing.unit * 4
+  },
+  collapseParent: {
+    paddingTop: 0,
+    paddingBottom: 0
   }
 })
