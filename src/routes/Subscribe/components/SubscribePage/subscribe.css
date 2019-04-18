@@ -1,0 +1,79 @@
+form>input,
+button {
+  margin-top: 12px;
+}
+
+ul.lead {
+  margin-top: 40px
+}
+
+.lead>li {
+  margin: 8px 0
+}
+
+
+.btn {
+  margin: 35px 0px;
+}
+
+.text-success2 {
+  color: #2196f3
+}
+
+a.text-success:focus,
+a.text-success:hover {
+  color: #2196f3
+}
+
+.btn {
+  margin: 35px 0px;
+}
+
+.btn.focus,
+.btn:focus,
+.btn:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.btn-default:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+h1 {
+  margin: .67em auto;
+  font-size: 2em;
+}
+
+.h1,
+h1 {
+  font-size: 36px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.lead {
+  font-size: 21px;
+}

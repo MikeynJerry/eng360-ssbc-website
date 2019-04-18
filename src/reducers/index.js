@@ -30,3 +30,12 @@ export const CharacterReducer = (state = initialCharacterState, action) => {
       return state
   }
 }
+
+export const SubscribeReducer = (state = { start: '', period: '' }, action) => {
+  switch (action.type) {
+    case 'SUBSCRIBE':
+      return action.payload
+    default:
+      return state
+  }
+}
