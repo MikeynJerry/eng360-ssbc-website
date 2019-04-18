@@ -26,6 +26,7 @@ const locationMap = {
   '/defending': 'Defending',
   '/offense': 'Offense',
   '/events': 'Event Calendar',
+  '/subscribe': 'Subscribe',
   Articles: '/articles',
   Free: '/articles/free',
   'Members Only': '/articles/members',
@@ -36,7 +37,8 @@ const locationMap = {
   Attacking: '/attacking',
   Defending: '/defending',
   Offense: '/offense',
-  'Event Calendar': '/events'
+  'Event Calendar': '/events',
+  Subscribe: '/subscribe'
 }
 
 export class Navbar extends React.Component {
@@ -143,6 +145,12 @@ export class Navbar extends React.Component {
             selected={'Event Calendar' === locationMap[pathname]}
             onClick={() => this.goToPage('Event Calendar')}>
             <ListItemText primary="Event Calendar" />
+          </ListItem>
+          <ListItem
+            button
+            selected={'Subscribe' === locationMap[pathname]}
+            onClick={() => this.goToPage('Subscribe')}>
+            <ListItemText primary="Become A Member!" />
           </ListItem>
         </List>
       </div>
