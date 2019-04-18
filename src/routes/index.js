@@ -10,6 +10,7 @@ import SwitchRoute from './Switch'
 import AttackingRoute from './Attacking'
 import DefendingRoute from './Defending'
 import OffenseRoute from './Offense'
+import EventsRoute from './Events'
 
 export default function createRoutes(store) {
   return (
@@ -24,7 +25,8 @@ export default function createRoutes(store) {
           SwitchRoute,
           AttackingRoute,
           DefendingRoute,
-          OffenseRoute
+          OffenseRoute,
+          EventsRoute
           /* Add More Routes Here */
         ].map((settings, index) => (
           <Route key={`Route-${index}`} {...settings} />

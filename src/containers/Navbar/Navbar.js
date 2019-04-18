@@ -25,7 +25,7 @@ const locationMap = {
   '/attacking': 'Attacking',
   '/defending': 'Defending',
   '/offense': 'Offense',
-  '/calendar': 'Event Calendar',
+  '/events': 'Event Calendar',
   Articles: '/articles',
   Free: '/articles/free',
   'Members Only': '/articles/members',
@@ -36,7 +36,7 @@ const locationMap = {
   Attacking: '/attacking',
   Defending: '/defending',
   Offense: '/offense',
-  'Event Calendar': '/calendar'
+  'Event Calendar': '/events'
 }
 
 export class Navbar extends React.Component {
@@ -168,7 +168,7 @@ export class Navbar extends React.Component {
               className={classes.flex}
               component={Link}
               to="/">
-              Super Smash Brothers Club
+              Super Smash Brothers Club - {locationMap[pathname]}
             </Typography>
             <Typography variant="h6" color="inherit">
               {character.name}
