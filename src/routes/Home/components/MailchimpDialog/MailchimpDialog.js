@@ -4,6 +4,8 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
+import Typography from '@material-ui/core/Typography'
+import TextField from '@material-ui/core/TextField'
 import './MailchimpDialog.css'
 
 class MailchimpDialog extends React.Component {
@@ -15,7 +17,12 @@ class MailchimpDialog extends React.Component {
   }
 
   render() {
-    const { onRequestClose, open } = this.props
+    const {
+      onRequestClose,
+      open,
+      character: { bigLink, name },
+      classes
+    } = this.props
     const { value } = this.state
     return (
       <Dialog open={open} onClose={onRequestClose}>
@@ -31,20 +38,27 @@ class MailchimpDialog extends React.Component {
             <b>Subscribe To Our Mailing List!</b>
           </DialogTitle>
           <DialogContent style={{ paddingTop: '0', paddingBottom: '0' }}>
-            <div id="mc_embed_signup">
-              <div id="mc_embed_signup_scroll">
-                <input
-                  type="email"
-                  value={value}
-                  name="EMAIL"
-                  className="email"
-                  id="mce-EMAIL"
-                  placeholder="email address"
-                  required
-                  onChange={({ target: { value } }) => this.setState({ value })}
-                />
-              </div>
-            </div>
+            <img
+              className={classes.media}
+              src={`https://www.ssbwiki.com/images/thumb/${bigLink}`}
+              alt={name}
+            />
+            <Typography variant="h6" style={{ padding: 10 }}>
+              Joining your first Super Smash Brothers tournament can be
+              daunting. To help you prepare, we've created a list of tips that
+              will help you pilot {name} to success! Just subscribe to our
+              mailing list and we'll send them straight to your email.
+            </Typography>
+            <TextField
+              id="outlined-name"
+              label="Email"
+              value={value}
+              onChange={({ target: { value } }) => this.setState({ value })}
+              margin="normal"
+              variant="outlined"
+              type="email"
+              style={{ minWidth: 550 }}
+            />
           </DialogContent>
           <DialogActions>
             <Button onClick={onRequestClose} color="secondary">
