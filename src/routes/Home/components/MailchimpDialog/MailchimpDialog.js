@@ -50,8 +50,9 @@ class MailchimpDialog extends React.Component {
               mailing list and we'll send them straight to your email.
             </Typography>
             <TextField
-              id="outlined-name"
+              name="EMAIL"
               label="Email"
+              id="mce-EMAIL"
               value={value}
               onChange={({ target: { value } }) => this.setState({ value })}
               margin="normal"
