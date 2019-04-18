@@ -9,7 +9,6 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { Slide } from '@material-ui/core'
-import FreePage from '../../../Free/components/FreePage/FreePage'
 
 const ArticleCard = ({ article, classes, image }) => (
   <Card className={classes.card}>
@@ -43,14 +42,16 @@ const articles = {
     description:
       'The Smash roster welcomes a new member. Here is everything you need to know to be top tier.',
     link: 'https://www.nytimes.com/2019/04/18/us/politics/mueller-report.html',
-    image: 'https://www.ssbwiki.com/images/thumb/5/5c/Joker_SSBU.png/400px-Joker_SSBU.png'
+    image:
+      'https://www.ssbwiki.com/images/thumb/5/5c/Joker_SSBU.png/400px-Joker_SSBU.png'
   },
   'tier-list': {
     title: 'Best of the Best: Our Tier List',
     description:
       'Not all characters play equally. Picking the wrong character may put you at a disadvantage, here is out list of the best!',
     link: 'https://www.nytimes.com/2019/04/18/us/politics/mueller-report.html',
-    image: 'https://media.discordapp.net/attachments/325737433826328577/546446517305868299/Jan19TierList.png?width=717&height=516'
+    image:
+      'https://media.discordapp.net/attachments/325737433826328577/546446517305868299/Jan19TierList.png?width=717&height=516'
   },
   'mewtwoking-interview': {
     title: 'We Spoke with The Legend Himself!',
@@ -95,6 +96,14 @@ const articleList = [
 
 export const MembersOnlyPage = ({ classes }) => (
   <div>
+    <Button
+      size="large"
+      color="primary"
+      variant="contained"
+      className={classes.centerButton}>
+      Join today and access these articles!
+    </Button>
+    <div className={classes.greyOut} />
     <Scrollbar className={classes.scrollbar}>
       <div className={classes.root}>
         <div className={classes.tiles}>

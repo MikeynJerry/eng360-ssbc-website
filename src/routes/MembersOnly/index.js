@@ -5,6 +5,8 @@ export default {
   path,
   component: Loadable({
     loader: () =>
-      import(/* webpackChunkName: 'Members Only' */ './components/MembersOnlyPage')
+      import(
+        /* webpackChunkName: 'Members Only' */ './components/MembersOnlyPage'
+      )
   })
 }
