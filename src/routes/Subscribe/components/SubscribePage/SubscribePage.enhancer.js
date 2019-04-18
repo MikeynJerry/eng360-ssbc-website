@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import styles from './SubscribePage.styles'
 
 export default compose(
-  connect(({ subscribe }) => ({ subscribe })),
+  connect(({ subscribe, character }) => ({ subscribe, character })),
   withHandlers(({ dispatch }) => ({
     changeSubscription: props => period =>
       dispatch({ type: 'SUBSCRIBE', payload: { start: new Date(), period } })

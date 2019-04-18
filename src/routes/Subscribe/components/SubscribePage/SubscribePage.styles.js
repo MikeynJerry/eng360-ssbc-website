@@ -7,5 +7,10 @@ export default theme => ({
     height: 'calc(100vh - 64px) !important',
     display: 'flex',
     flexDirection: 'row'
+  },
+  media: {
+    height: 300,
+    margin: '0 auto',
+    display: 'block'
   }
 })

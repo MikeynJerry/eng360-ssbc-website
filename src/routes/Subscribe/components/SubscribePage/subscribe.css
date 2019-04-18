@@ -77,3 +77,21 @@ p {
 .lead {
   font-size: 21px;
 }
+
+.popup {
+  font-size: 14px;
+  color: #011627;
+  background-color: #2196f3;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #011627;
+  position: absolute;
+  top: 74px;
+  right: 10px;
+  margin-left: -185px;
+  width: 350px;
+  text-align: center;
+  padding: 10px;
+}
