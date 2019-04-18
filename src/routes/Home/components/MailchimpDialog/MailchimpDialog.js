@@ -24,9 +24,9 @@ class MailchimpDialog extends React.Component {
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
-          class="validate"
+          className="validate"
           target="_blank"
-          novalidate>
+          noValidate>
           <DialogTitle id="mailchimp-dialog-title">
             <b>Subscribe To Our Mailing List!</b>
           </DialogTitle>
@@ -37,22 +37,12 @@ class MailchimpDialog extends React.Component {
                   type="email"
                   value={value}
                   name="EMAIL"
-                  class="email"
+                  className="email"
                   id="mce-EMAIL"
                   placeholder="email address"
                   required
                   onChange={({ target: { value } }) => this.setState({ value })}
                 />
-                <div
-                  style={{ position: 'absolute', left: '-5000px' }}
-                  aria-hidden="true">
-                  <input
-                    type="text"
-                    name="b_a164efddb6210cd6db5821aa8_cdd1f7f863"
-                    tabindex="-1"
-                    value=""
-                  />
-                </div>
               </div>
             </div>
           </DialogContent>
@@ -60,7 +50,7 @@ class MailchimpDialog extends React.Component {
             <Button onClick={onRequestClose} color="secondary">
               Cancel
             </Button>
-            <Button type="submit" color="primary">
+            <Button type="submit" onClick={onRequestClose} color="primary">
               Subscribe
             </Button>
           </DialogActions>

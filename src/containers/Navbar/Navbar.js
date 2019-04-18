@@ -15,6 +15,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 
 const locationMap = {
+  '/': 'Homepage',
   '/articles': 'Articles',
   '/articles/free': 'Free',
   '/articles/members': 'Members Only',
@@ -27,6 +28,7 @@ const locationMap = {
   '/offense': 'Offense',
   '/events': 'Event Calendar',
   '/subscribe': 'Subscribe',
+  Homepage: '/',
   Articles: '/articles',
   Free: '/articles/free',
   'Members Only': '/articles/members',
@@ -75,6 +77,12 @@ export class Navbar extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
+          <ListItem
+            button
+            selected={'Homepage' === locationMap[pathname]}
+            onClick={() => this.goToPage('Homepage')}>
+            <ListItemText primary="Homepage" />
+          </ListItem>
           <ListItem
             button
             selected={'Articles' === locationMap[pathname]}
@@ -189,7 +197,8 @@ export class Navbar extends React.Component {
                 width: '10vw',
                 height: 64,
                 backgroundSize: '10vw auto',
-                pointerEvents: 'none'
+                pointerEvents: 'none',
+                backgroundRepeat: 'no-repeat'
               }}
             />
           </Toolbar>
