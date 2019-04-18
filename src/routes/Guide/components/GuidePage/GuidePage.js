@@ -1,6 +1,7 @@
 import React from 'react'
 import './GuidePage.css'
 import { Container, Row, Col, Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 const GuidePage = ({ classes }) => (
   <div
@@ -12,7 +13,7 @@ const GuidePage = ({ classes }) => (
     <Container fluid className="hundoheight">
       <Row className="maxpheight">
         <Col xs="6" className="padding-0">
-          <a href="/movement">
+          <Link to="/movement">
             <div className={[classes.quad1, 'quad'].join(' ')}>
               <img
                 src="https://imgur.com/oVOY4wJ.png"
@@ -21,10 +22,10 @@ const GuidePage = ({ classes }) => (
               />
               <h1 className={classes.header}>Movement</h1>
             </div>
-          </a>
+          </Link>
         </Col>
         <Col xs="6" className="padding-0">
-          <a href="/attacking">
+          <Link to="/attacking">
             <div className={[classes.quad3, 'quad'].join(' ')}>
               <img
                 src="https://imgur.com/jk4rw5K.png"
@@ -33,19 +34,19 @@ const GuidePage = ({ classes }) => (
               />
               <h1 className={classes.header}>Attacks</h1>
             </div>
-          </a>
+          </Link>
         </Col>
       </Row>
       <Row>
-        <a href="/characters">
+        <Link to="/characters">
           <Button className="absbetween">
             <h1>Choose a Fighter!</h1>
           </Button>
-        </a>
+        </Link>
       </Row>
       <Row className="maxpheight">
         <Col xs="6" className="padding-0">
-          <a href="/defending">
+          <Link to="/defending">
             <div className={[classes.quad2, 'quad'].join(' ')}>
               <img
                 src="https://imgur.com/SsczDVl.png"
@@ -54,10 +55,10 @@ const GuidePage = ({ classes }) => (
               />
               <h1 className={classes.header}>Defense</h1>
             </div>
-          </a>
+          </Link>
         </Col>
         <Col xs="6" className="padding-0">
-          <a href="/offense">
+          <Link to="/offense">
             <div className={[classes.quad4, 'quad'].join(' ')}>
               <img
                 src="https://imgur.com/KINn1Fn.png"
@@ -66,7 +67,7 @@ const GuidePage = ({ classes }) => (
               />
               <h1 className={classes.header}>Offense</h1>
             </div>
-          </a>
+          </Link>
         </Col>
       </Row>
     </Container>
