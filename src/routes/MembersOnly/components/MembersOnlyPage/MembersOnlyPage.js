@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import { Link } from 'react-router-dom'
 import { Slide } from '@material-ui/core'
 
 const ArticleCard = ({ article, classes, image }) => (
@@ -96,13 +97,15 @@ const articleList = [
 
 export const MembersOnlyPage = ({ classes }) => (
   <div>
-    <Button
-      size="large"
-      color="primary"
-      variant="contained"
-      className={classes.centerButton}>
-      Join today and access these articles!
-    </Button>
+    <Link to="/subscribe">
+      <Button
+        size="large"
+        color="primary"
+        variant="contained"
+        className={classes.centerButton}>
+        Join today to access these articles!
+      </Button>
+    </Link>
     <div className={classes.greyOut} />
     <Scrollbar className={classes.scrollbar}>
       <div className={classes.root}>

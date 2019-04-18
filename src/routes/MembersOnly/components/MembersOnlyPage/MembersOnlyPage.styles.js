@@ -40,7 +40,8 @@ export default theme => ({
     width: '100vw',
     height: '100vh',
     position: 'fixed',
-    zIndex: '123100',
-    backgroundImage: 'linear-gradient(to bottom, rgba(1, 1, 1, 0.0), rgba(1, 1, 1, 0.6))'
+    zIndex: '2',
+    backgroundImage:
+      'linear-gradient(to bottom, rgba(1, 1, 1, 0.0), rgba(1, 1, 1, 0.6))'
   }
 })
