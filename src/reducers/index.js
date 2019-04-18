@@ -1,3 +1,5 @@
+import { characters, characterList } from 'constants/characters'
+
 const initialUIState = {
   rightJoyconColor: 'gray',
   leftJoyconColor: 'gray',
@@ -17,10 +19,10 @@ export const UIReducer = (state = initialUIState, action) => {
   }
 }
 
-const initialCharacterState = {
-  bigLink: '4/44/Mario_SSBU.png/600px-Mario_SSBU.png',
-  name: 'Mario'
-}
+const character =
+  characterList[Math.floor(Math.random() * characterList.length)]
+
+const initialCharacterState = characters[character]
 
 export const CharacterReducer = (state = initialCharacterState, action) => {
   switch (action.type) {
