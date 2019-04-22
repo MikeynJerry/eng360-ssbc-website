@@ -12,7 +12,7 @@ class SubscribePage extends React.Component {
     this.state = {
       popup: false
     }
-    setTimeout(() => this.setState({ popup: true }), 2000)
+    setTimeout(() => this.setState({ popup: true }), 1000)
   }
 
   initialPopupStyle = () => ({
@@ -95,10 +95,9 @@ class SubscribePage extends React.Component {
                 </ul>
                 <button
                   onClick={() => changeSubscription('monthly')}
-                  className="btn btn-block btn-default btn-lg"
-                  disabled={subscribe.period === 'monthly'}>
+                  className="btn btn-block btn-default btn-lg">
                   {subscribe.period !== 'monthly' && 'Sign Up'}
-                  {subscribe.period === 'monthly' && 'Selected'}
+                  {subscribe.period === 'monthly' && 'Cancel Subscription'}
                 </button>
               </Col>
               <Col sm="4" style={{ border: '2px solid #2196f3' }}>
@@ -173,10 +172,9 @@ class SubscribePage extends React.Component {
                 </ul>
                 <button
                   onClick={() => changeSubscription('yearly')}
-                  className="btn btn-block btn-default btn-lg"
-                  disabled={subscribe.period === 'yearly'}>
+                  className="btn btn-block btn-default btn-lg">
                   {subscribe.period !== 'yearly' && 'Sign Up'}
-                  {subscribe.period === 'yearly' && 'Selected'}
+                  {subscribe.period === 'yearly' && 'Cancel Subscription'}
                 </button>
               </Col>
               <Col sm="4">
@@ -245,10 +243,9 @@ class SubscribePage extends React.Component {
                 </ul>
                 <button
                   onClick={() => changeSubscription('quarterly')}
-                  className="btn btn-block btn-default btn-lg"
-                  disabled={subscribe.period === 'quarterly'}>
+                  className="btn btn-block btn-default btn-lg">
                   {subscribe.period !== 'quarterly' && 'Sign Up'}
-                  {subscribe.period === 'quarterly' && 'Selected'}
+                  {subscribe.period === 'quarterly' && 'Cancel Subscription'}
                 </button>
               </Col>
             </Row>

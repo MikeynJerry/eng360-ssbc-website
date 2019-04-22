@@ -41,22 +41,23 @@ const articles = {
     title: 'Pivot Grabbing for Dolts',
     description:
       'Getting snagged from half way across the stage? Well, you can do it too!',
-    link: 'https://www.nytimes.com/2019/04/18/us/politics/mueller-report.html',
+    link: 'https://www.ssbwiki.com/Pivot_grab',
     image: 'https://www.ssbwiki.com/images/e/e2/Grab.jpg'
   },
   'keep-away': {
     title: 'Dare to Nair: Stop Following Me!',
     description:
-      'Is  your oppponent glued to you and invading your personal space? Neutral air is here to help!',
-    link: 'https://www.nytimes.com/2019/04/18/us/politics/mueller-report.html',
+      'Is  your opponent glued to you and invading your personal space? Neutral air is here to help!',
+    link: 'https://www.ssbwiki.com/Neutral_aerial',
     image: 'https://www.ssbwiki.com/images/d/d4/MarioNairSSBM.gif'
   },
   'best-music': {
     title: 'What is the Best Smash Jam?',
     description:
       'Final Destination or Battlefields galore, which Smash tune is the best for a showdown? Here is our top ten!',
-    link: 'https://www.nytimes.com/2019/04/18/us/politics/mueller-report.html',
-    image: 'https://pbs.twimg.com/profile_images/727366040938668033/LJwv3Gd8.jpg'
+    link: 'https://www.ssbwiki.com/Music_(SSBU)',
+    image:
+      'https://pbs.twimg.com/profile_images/727366040938668033/LJwv3Gd8.jpg'
   }
 }
 

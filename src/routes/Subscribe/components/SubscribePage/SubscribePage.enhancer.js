@@ -7,8 +7,14 @@ import styles from './SubscribePage.styles'
 export default compose(
   connect(({ subscribe, character }) => ({ subscribe, character })),
   withHandlers(({ dispatch }) => ({
-    changeSubscription: props => period =>
-      dispatch({ type: 'SUBSCRIBE', payload: { start: new Date(), period } })
+    changeSubscription: ({
+      subscribe: { period: currentPeriod }
+    }) => period => {
+      if (currentPeriod !== period)
+        dispatch({ type: 'SUBSCRIBE', payload: { start: new Date(), period } })
+      if (currentPeriod === period)
+        dispatch({ type: 'SUBSCRIBE', payload: { start: '', period: '' } })
+    }
   })),
   withStyles(styles)
 )
