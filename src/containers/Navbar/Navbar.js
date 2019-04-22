@@ -70,7 +70,8 @@ export class Navbar extends React.Component {
     const {
       classes,
       location: { pathname },
-      character
+      character,
+      subscribed
     } = this.props
     const { drawerOpen, collapsedArticles, collapsedGuide } = this.state
 
@@ -87,7 +88,7 @@ export class Navbar extends React.Component {
             button
             selected={'Articles' === locationMap[pathname]}
             className={classes.collapseParent}
-            onClick={() => this.goToPage('Articles')}>
+            onClick={() => this.goToPage(subscribed ? 'Members Only' : 'Free')}>
             <ListItemText primary="Articles" />
             <IconButton
               onClick={e => {

@@ -60,6 +60,11 @@ class MailchimpDialog extends React.Component {
               type="email"
               style={{ minWidth: 550 }}
             />
+            <input
+              type="hidden"
+              name="CHARACTER"
+              value={`https://www.ssbwiki.com/images/thumb/${bigLink}`}
+            />
           </DialogContent>
           <DialogActions>
             <Button onClick={onRequestClose} color="secondary">

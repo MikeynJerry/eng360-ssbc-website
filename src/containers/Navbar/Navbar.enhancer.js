@@ -9,7 +9,10 @@ export default compose(
   setDisplayName('EnhancedNavbar'),
   // Add props.router (used in handlers)
   withRouter,
-  connect(({ character }) => ({ character })),
+  connect(({ character, subscribe }) => ({
+    character,
+    subscribed: subscribe.start !== ''
+  })),
   // Add styles as classes prop
   withStyles(styles)
 )
