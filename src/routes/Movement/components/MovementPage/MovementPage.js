@@ -29,58 +29,66 @@ const onVisibilityChange = (flashing, setFlashing, i) => isVisible => {
   visiblity[i] = isVisible
 }
 
-export const MovementPage = ({
-  classes,
-  sections,
-  videos,
-  switches,
-  spacing,
-  flashing,
-  mode,
-  character,
-  setFlashing,
-  currentFlashing
-}) => (
-  <div className={classes.container}>
-    <div className={classes.spacer} />
-    {mode === 'tabletop' && <Joycons {...currentFlashing} />}
-    {sections(character).map((section, i) => (
-      <div key={i}>
-        <Markdown className={classes.root}>{section}</Markdown>
-        {switches[i] && (
-          <VisibilitySensor
-            onChange={onVisibilityChange(flashing[i], setFlashing, i)}>
-            <Switch mode={mode} video={videos[i]} flashing={flashing[i]} />
-          </VisibilitySensor>
-        )}
-        {spacing[i] > 0 && (
-          <div style={{ width: '100%', height: spacing[i] }} />
-        )}
+export class MovementPage extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  render() {
+    const {
+      classes,
+      sections,
+      videos,
+      switches,
+      spacing,
+      flashing,
+      mode,
+      character,
+      setFlashing,
+      currentFlashing
+    } = this.props
+    return (
+      <div className={classes.container}>
+        <div className={classes.spacer} />
+        {mode === 'tabletop' && <Joycons {...currentFlashing} />}
+        {sections(character).map((section, i) => (
+          <div key={i}>
+            <Markdown className={classes.root}>{section}</Markdown>
+            {switches[i] && (
+              <VisibilitySensor
+                onChange={onVisibilityChange(flashing[i], setFlashing, i)}>
+                <Switch mode={mode} video={videos[i]} flashing={flashing[i]} />
+              </VisibilitySensor>
+            )}
+            {spacing[i] > 0 && (
+              <div style={{ width: '100%', height: spacing[i] }} />
+            )}
+          </div>
+        ))}
+        <Sticky>
+          <Tooltip title="Back to customizing your switch" placement="top">
+            <Fab
+              color="primary"
+              style={{ position: 'absolute', bottom: 25, left: 25 }}
+              component={Link}
+              to="/switch">
+              <ArrowBackIcon />
+            </Fab>
+          </Tooltip>
+        </Sticky>
+        <Sticky>
+          <Tooltip title="Learn about attacking" placement="top">
+            <Fab
+              color="primary"
+              style={{ position: 'absolute', bottom: 25, right: 25 }}
+              component={Link}
+              to="/attacking">
+              <ArrowForwardIcon />
+            </Fab>
+          </Tooltip>
+        </Sticky>
       </div>
-    ))}
-    <Sticky>
-      <Tooltip title="Back to customizing your switch" placement="top">
-        <Fab
-          color="primary"
-          style={{ position: 'absolute', bottom: 25, left: 25 }}
-          component={Link}
-          to="/switch">
-          <ArrowBackIcon />
-        </Fab>
-      </Tooltip>
-    </Sticky>
-    <Sticky>
-      <Tooltip title="Learn about attacking" placement="top">
-        <Fab
-          color="primary"
-          style={{ position: 'absolute', bottom: 25, right: 25 }}
-          component={Link}
-          to="/attacking">
-          <ArrowForwardIcon />
-        </Fab>
-      </Tooltip>
-    </Sticky>
-  </div>
-)
+    )
+  }
+}
 
 export default MovementPage
