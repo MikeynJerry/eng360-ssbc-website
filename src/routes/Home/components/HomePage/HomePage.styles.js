@@ -24,22 +24,22 @@ export default theme => ({
   quad1: {
     backgroundColor: 'red',
     backgroundImage:
-      'url(https://www.ssbwiki.com/images/thumb/f/ff/Sidestep_SSB4.JPG/800px-Sidestep_SSB4.JPG)'
+      'url(https://www.nintendo-insider.com/wp-content/uploads/2018/11/donkey-kong-super-smash-bros-ultimate-art.jpg)'
   },
   quad2: {
     backgroundColor: 'green',
     backgroundImage:
-      'url(https://www.ssbwiki.com/images/thumb/5/5b/BowserShieldSSB4.png/800px-BowserShieldSSB4.png)'
+      'url(http://images.nintendolife.com/56d215704ccae/link.original.jpg)'
   },
   quad3: {
     backgroundColor: 'blue',
     backgroundImage:
-      'url(https://vignette.wikia.nocookie.net/ssb/images/6/67/Foxupatyourside.jpg/revision/latest?cb=20141017055911)'
+      'url(https://thespinoff.co.nz/wp-content/uploads/2018/06/sam-25.jpg)'
   },
   quad4: {
     backgroundColor: 'yellow',
     backgroundImage:
-      'url(https://www.ssbwiki.com/images/thumb/c/c2/FoxSSB4DashAttack.png/1200px-FoxSSB4DashAttack.png)'
+      'url(https://www.ssbwiki.com/images/thumb/a/ad/Charizard-Flamethrower-SSB4.png/800px-Charizard-Flamethrower-SSB4.png)'
   },
   header: {
     position: 'absolute',

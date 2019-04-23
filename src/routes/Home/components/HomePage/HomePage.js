@@ -28,26 +28,26 @@ class HomePage extends React.Component {
           <Container fluid={'true'} className={'hundoheight'}>
             <Row className={'maxpheight'}>
               <Col xs="6" className={'padding-0'}>
-                <a href="/movement">
+                <a href="/articles/free">
                   <div className={[classes.quad1, 'quad'].join(' ')}>
                     <img
-                      src="https://imgur.com/oVOY4wJ.png"
-                      alt={'Joystick'}
+                      src="https://imgur.com/TZ37NZ9.png"
+                      alt={'Newspaper'}
                       className={classes.quadIcon}
                     />
-                    <h1 className={classes.header}>Movement</h1>
+                    <h1 className={classes.header}>Articles</h1>
                   </div>
                 </a>
               </Col>
               <Col xs="6" className={'padding-0'}>
-                <a href="/attacking">
+                <a href="/subscribe">
                   <div className={[classes.quad3, 'quad'].join(' ')}>
                     <img
-                      src="https://imgur.com/jk4rw5K.png"
-                      alt={'Fist'}
+                      src="https://imgur.com/O1JYXhq.png"
+                      alt={'Group of People'}
                       className={classes.quadIcon}
                     />
-                    <h1 className={classes.header}>Attacks</h1>
+                    <h1 className={classes.header}>Subscribe</h1>
                   </div>
                 </a>
               </Col>
@@ -61,26 +61,26 @@ class HomePage extends React.Component {
             </Row>
             <Row className={'maxpheight'}>
               <Col xs="6" className={'padding-0'}>
-                <a href="/defending">
+                <a href="/events">
                   <div className={[classes.quad2, 'quad'].join(' ')}>
                     <img
-                      src="https://imgur.com/SsczDVl.png"
-                      alt={'Shield'}
+                      src="https://imgur.com/xLyEtlO.png"
+                      alt={'Calendar'}
                       className={classes.quadIcon}
                     />
-                    <h1 className={classes.header}>Defense</h1>
+                    <h1 className={classes.header}>Events</h1>
                   </div>
                 </a>
               </Col>
               <Col xs="6" className={'padding-0'}>
-                <a href="/offense">
+                <a href="/guide">
                   <div className={[classes.quad4, 'quad'].join(' ')}>
                     <img
-                      src="https://imgur.com/KINn1Fn.png"
-                      alt={'Sword'}
+                      src="https://imgur.com/ZBgumXy.png"
+                      alt={'Compass'}
                       className={classes.quadIcon}
                     />
-                    <h1 className={classes.header}>Offense</h1>
+                    <h1 className={classes.header}>Guide</h1>
                   </div>
                 </a>
               </Col>
