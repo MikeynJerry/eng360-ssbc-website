@@ -31,7 +31,7 @@ class HomePage extends React.Component {
                 <a href="/articles/free">
                   <div className={[classes.quad1, 'quad'].join(' ')}>
                     <img
-                      src="https://imgur.com/TZ37NZ9.png"
+                      src="https://imgur.com/4O1jLWP.png"
                       alt={'Newspaper'}
                       className={classes.quadIcon}
                     />
@@ -43,7 +43,7 @@ class HomePage extends React.Component {
                 <a href="/subscribe">
                   <div className={[classes.quad3, 'quad'].join(' ')}>
                     <img
-                      src="https://imgur.com/O1JYXhq.png"
+                      src="https://imgur.com/wNkEFur.png"
                       alt={'Group of People'}
                       className={classes.quadIcon}
                     />
@@ -64,7 +64,7 @@ class HomePage extends React.Component {
                 <a href="/events">
                   <div className={[classes.quad2, 'quad'].join(' ')}>
                     <img
-                      src="https://imgur.com/xLyEtlO.png"
+                      src="https://imgur.com/PhWjwbw.png"
                       alt={'Calendar'}
                       className={classes.quadIcon}
                     />
@@ -76,7 +76,7 @@ class HomePage extends React.Component {
                 <a href="/guide">
                   <div className={[classes.quad4, 'quad'].join(' ')}>
                     <img
-                      src="https://imgur.com/ZBgumXy.png"
+                      src="https://imgur.com/iN8dq0M.png"
                       alt={'Compass'}
                       className={classes.quadIcon}
                     />
