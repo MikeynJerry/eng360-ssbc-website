@@ -19,7 +19,7 @@ const ArticleCard = ({ article, classes, image }) => (
         title={article.title}
         style={{ pointerEvents: 'none' }}
       />
-      <CardContent style={{ minHeight: 154.4 }}>
+      <CardContent style={{ minHeight: 165.06 }}>
         <Typography gutterBottom variant="h5" component="h2">
           {article.title}
         </Typography>
@@ -59,25 +59,25 @@ const articles = {
     image:
       'https://pbs.twimg.com/profile_images/727366040938668033/LJwv3Gd8.jpg'
   },
-  'pivot-grab2': {
+  'wave-dash': {
     title: 'Way of the Wave Dash',
     description:
       'Opponent teleporting half way across the stage? Well, you can do it too!',
-    link: 'https://www.ssbwiki.com/Pivot_grab',
+    link: 'https://www.ssbwiki.com/wavedash',
     image: 'https://www.ssbwiki.com/images/c/c6/Wavedashbig.gif'
   },
-  'keep-away2': {
+  'down-spike': {
     title: 'Queue the Spike: Down you Go!',
     description:
       'Need a quick KO? Knock your opponent out fast with a well timed down spike!',
-    link: 'https://www.ssbwiki.com/Neutral_aerial',
+    link: 'https://www.ssbwiki.com/spike',
     image: 'https://www.ssbwiki.com/images/4/4b/MeteorSmashRange.png'
   },
-  'best-music2': {
+  'best-pokemon': {
     title: 'What is the Best Pokemon Companion?',
     description:
       'Sometimes a little help is needed to finish off that battle, Pokemon creatures can help you do that. Here is our top ten!',
-    link: 'https://www.ssbwiki.com/Music_(SSBU)',
+    link: 'https://www.ssbwiki.com/List_of_Pok%C3%A9mon',
     image: 'https://www.ssbwiki.com/images/7/7b/Pok%C3%A9_Ball_Origin.png'
   }
 }
@@ -86,9 +86,9 @@ const articleList = [
   'pivot-grab',
   'keep-away',
   'best-music',
-  'pivot-grab2',
-  'keep-away2',
-  'best-music2'
+  'wave-dash',
+  'down-spike',
+  'best-pokemon'
 ]
 
 export const FreePage = ({ classes }) => (
