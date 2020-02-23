@@ -1,8 +1,8 @@
 {
   "projects": {
-    "default": "eng360-ssbu",
-    "master": "eng360-ssbu",
-    "prod": "eng360-ssbu"
+    "default": "eng360-ssbc",
+    "master": "eng360-ssbc",
+    "prod": "eng360-ssbc"
   },
   "ci": {
     "createConfig": {
@@ -10,20 +10,20 @@
         "env": "staging",
         "firebase": {
           "apiKey": "${STAGE_FIREBASE_API_KEY}",
-          "authDomain": "eng360-ssbu.firebaseapp.com",
-          "databaseURL": "https://eng360-ssbu.firebaseio.com",
-          "projectId": "eng360-ssbu",
-          "storageBucket": "eng360-ssbu.appspot.com"
+          "authDomain": "eng360-ssbc.firebaseapp.com",
+          "databaseURL": "https://eng360-ssbc.firebaseio.com",
+          "projectId": "eng360-ssbc",
+          "storageBucket": "eng360-ssbc.appspot.com"
         }
       },
       "prod": {
         "env": "production",
         "firebase": {
           "apiKey": "${PROD_FIREBASE_API_KEY}",
-          "authDomain": "eng360-ssbu.firebaseapp.com",
-          "databaseURL": "https://eng360-ssbu.firebaseio.com",
-          "projectId": "eng360-ssbu",
-          "storageBucket": "eng360-ssbu.appspot.com"
+          "authDomain": "eng360-ssbc.firebaseapp.com",
+          "databaseURL": "https://eng360-ssbc.firebaseio.com",
+          "projectId": "eng360-ssbc",
+          "storageBucket": "eng360-ssbc.appspot.com"
         }
       }
     }

@@ -1,4 +1,4 @@
-# eng360-ssbu-website
+# eng360-ssbc-website
 
 [![License][license-image]][license-url]
 [![Code Style][code-style-image]][code-style-url]
@@ -170,11 +170,11 @@ More about how routing works is available in [the react-router-dom docs](https:/
     * functional components can be helpful (along with other tools) when attempting to optimize things
 
 
-[climate-image]: https://img.shields.io/codeclimate/github/MikeynJerry/eng360-ssbu-website.svg?style=flat-square
-[climate-url]: https://codeclimate.com/github/MikeynJerry/eng360-ssbu-website
-[coverage-image]: https://img.shields.io/codeclimate/coverage/github/MikeynJerry/eng360-ssbu-website.svg?style=flat-square
-[coverage-url]: https://codeclimate.com/github/MikeynJerry/eng360-ssbu-website
-[license-image]: https://img.shields.io/npm/l/eng360-ssbu-website.svg?style=flat-square
-[license-url]: https://github.com/MikeynJerry/eng360-ssbu-website/blob/master/LICENSE
+[climate-image]: https://img.shields.io/codeclimate/github/MikeynJerry/eng360-ssbc-website.svg?style=flat-square
+[climate-url]: https://codeclimate.com/github/MikeynJerry/eng360-ssbc-website
+[coverage-image]: https://img.shields.io/codeclimate/coverage/github/MikeynJerry/eng360-ssbc-website.svg?style=flat-square
+[coverage-url]: https://codeclimate.com/github/MikeynJerry/eng360-ssbc-website
+[license-image]: https://img.shields.io/npm/l/eng360-ssbc-website.svg?style=flat-square
+[license-url]: https://github.com/MikeynJerry/eng360-ssbc-website/blob/master/LICENSE
 [code-style-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [code-style-url]: http://standardjs.com/

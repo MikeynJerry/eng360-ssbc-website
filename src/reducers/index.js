@@ -1,3 +1,5 @@
+import { characters, characterList } from 'constants/characters'
+
 const initialUIState = {
   rightJoyconColor: 'gray',
   leftJoyconColor: 'gray',
@@ -17,15 +19,24 @@ export const UIReducer = (state = initialUIState, action) => {
   }
 }
 
-const initialCharacterState = {
-  bigLink: '4/44/Mario_SSBU.png/600px-Mario_SSBU.png',
-  name: 'Mario'
-}
+const character =
+  characterList[Math.floor(Math.random() * characterList.length)]
+
+const initialCharacterState = characters[character]
 
 export const CharacterReducer = (state = initialCharacterState, action) => {
   switch (action.type) {
     case 'SELECT_CHARACTER':
       return Object.assign({}, state, { ...action.payload })
+    default:
+      return state
+  }
+}
+
+export const SubscribeReducer = (state = { start: '', period: '' }, action) => {
+  switch (action.type) {
+    case 'SUBSCRIBE':
+      return action.payload
     default:
       return state
   }

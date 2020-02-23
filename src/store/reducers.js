@@ -4,7 +4,11 @@ import { reducer as firestore } from 'redux-firestore'
 import { reducer as form } from 'redux-form'
 import { reducer as notifications } from 'modules/notification'
 import locationReducer from './location'
-import { UIReducer as ui, CharacterReducer as character } from 'reducers'
+import {
+  UIReducer as ui,
+  CharacterReducer as character,
+  SubscribeReducer as subscribe
+} from 'reducers'
 
 export function makeRootReducer(asyncReducers) {
   return combineReducers({
@@ -16,6 +20,7 @@ export function makeRootReducer(asyncReducers) {
     location: locationReducer,
     ui,
     character,
+    subscribe,
     ...asyncReducers
   })
 }

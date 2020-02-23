@@ -10,66 +10,157 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import MenuIcon from '@material-ui/icons/Menu'
 import IconButton from '@material-ui/core/IconButton'
+import Collapse from '@material-ui/core/Collapse'
+import ExpandLess from '@material-ui/icons/ExpandLess'
+import ExpandMore from '@material-ui/icons/ExpandMore'
 
 const locationMap = {
   '/': 'Homepage',
+  '/articles': 'Articles',
+  '/articles/free': 'Free',
+  '/articles/members': 'Members Only',
+  '/guide': 'Guide',
   '/characters': 'Characters',
   '/switch': 'Switch',
   '/movement': 'Movement',
   '/attacking': 'Attacking',
   '/defending': 'Defending',
   '/offense': 'Offense',
+  '/events': 'Event Calendar',
+  '/subscribe': 'Subscribe',
   Homepage: '/',
+  Articles: '/articles',
+  Free: '/articles/free',
+  'Members Only': '/articles/members',
+  Guide: '/guide',
   Characters: '/characters',
   Switch: '/switch',
   Movement: '/movement',
   Attacking: '/attacking',
   Defending: '/defending',
-  Offense: '/offense'
+  Offense: '/offense',
+  'Event Calendar': '/events',
+  Subscribe: '/subscribe'
 }
 
 export class Navbar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      drawerOpen: false,
+      collapsedArticles: false,
+      collapsedGuide: true
     }
   }
 
-  toggleDrawer = () => this.setState({ open: !this.state.open })
+  goToPage = page => {
+    const {
+      location: { pathname },
+      history
+    } = this.props
+    if (page !== locationMap[pathname]) {
+      history.push(locationMap[page])
+      this.toggleState('drawerOpen')()
+    }
+  }
+
+  toggleState = key => () => this.setState({ [key]: !this.state[key] })
 
   render() {
     const {
       classes,
       location: { pathname },
-      history,
-      character
+      character,
+      subscribed
     } = this.props
-    const { open } = this.state
+    const { drawerOpen, collapsedArticles, collapsedGuide } = this.state
 
     const sideList = (
       <div className={classes.list}>
         <List>
-          {[
-            'Homepage',
-            'Characters',
-            'Switch',
-            'Movement',
-            'Attacking',
-            'Defending',
-            'Offense'
-          ].map((text, index) => (
-            <ListItem
-              button
-              key={text}
-              selected={text === locationMap[pathname]}
-              onClick={() => {
-                if (text !== locationMap[pathname])
-                  history.push(locationMap[text])
+          <ListItem
+            button
+            selected={'Homepage' === locationMap[pathname]}
+            onClick={() => this.goToPage('Homepage')}>
+            <ListItemText primary="Homepage" />
+          </ListItem>
+          <ListItem
+            button
+            selected={'Articles' === locationMap[pathname]}
+            className={classes.collapseParent}
+            onClick={() => this.goToPage(subscribed ? 'Members Only' : 'Free')}>
+            <ListItemText primary="Articles" />
+            <IconButton
+              onClick={e => {
+                e.stopPropagation()
+                this.toggleState('collapsedArticles')()
               }}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+              {!collapsedArticles ? <ExpandLess /> : <ExpandMore />}
+            </IconButton>
+          </ListItem>
+          <Collapse in={!collapsedArticles} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {['Free', 'Members Only'].map((text, index) => (
+                <ListItem
+                  button
+                  key={text}
+                  selected={text === locationMap[pathname]}
+                  onClick={() => this.goToPage(text)}
+                  className={classes.nested}>
+                  <ListItemText primary={text} />
+                </ListItem>
+              ))}
+            </List>
+          </Collapse>
+
+          <ListItem
+            button
+            selected={'Guide' === locationMap[pathname]}
+            className={classes.collapseParent}
+            onClick={() => this.goToPage('Guide')}>
+            <ListItemText primary="Guide" />
+            <IconButton
+              onClick={e => {
+                e.stopPropagation()
+                this.toggleState('collapsedGuide')()
+              }}>
+              {!collapsedGuide ? <ExpandLess /> : <ExpandMore />}
+            </IconButton>
+          </ListItem>
+          <Collapse in={!collapsedGuide} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {[
+                'Characters',
+                'Switch',
+                'Movement',
+                'Attacking',
+                'Defending',
+                'Offense'
+              ].map((text, index) => (
+                <ListItem
+                  button
+                  key={text}
+                  selected={text === locationMap[pathname]}
+                  onClick={() => this.goToPage(text)}
+                  className={classes.nested}>
+                  <ListItemText primary={text} />
+                </ListItem>
+              ))}
+            </List>
+          </Collapse>
+
+          <ListItem
+            button
+            selected={'Event Calendar' === locationMap[pathname]}
+            onClick={() => this.goToPage('Event Calendar')}>
+            <ListItemText primary="Event Calendar" />
+          </ListItem>
+          <ListItem
+            button
+            selected={'Subscribe' === locationMap[pathname]}
+            onClick={() => this.goToPage('Subscribe')}>
+            <ListItemText primary="Become A Member!" />
+          </ListItem>
         </List>
       </div>
     )
@@ -81,8 +172,11 @@ export class Navbar extends React.Component {
             <IconButton
               color="inherit"
               aria-label="Open drawer"
-              onClick={this.toggleDrawer}
-              className={classNames(classes.menuButton, open && classes.hide)}>
+              onClick={this.toggleState('drawerOpen')}
+              className={classNames(
+                classes.menuButton,
+                drawerOpen && classes.hide
+              )}>
               <MenuIcon />
             </IconButton>
             <Typography
@@ -91,7 +185,7 @@ export class Navbar extends React.Component {
               className={classes.flex}
               component={Link}
               to="/">
-              Super Smash Brothers Ultimate Guide
+              Super Smash Brothers Club - {locationMap[pathname]}
             </Typography>
             <Typography variant="h6" color="inherit">
               {character.name}
@@ -104,17 +198,14 @@ export class Navbar extends React.Component {
                 width: '10vw',
                 height: 64,
                 backgroundSize: '10vw auto',
-                pointerEvents: 'none'
+                pointerEvents: 'none',
+                backgroundRepeat: 'no-repeat'
               }}
             />
           </Toolbar>
         </AppBar>
-        <Drawer open={open} onClose={this.toggleDrawer}>
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer}
-            onKeyDown={this.toggleDrawer}>
+        <Drawer open={drawerOpen} onClose={this.toggleState('drawerOpen')}>
+          <div tabIndex={0} role="button">
             {sideList}
           </div>
         </Drawer>
