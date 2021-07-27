@@ -14,7 +14,6 @@
 
 .quad:hover {
     box-shadow: inset 0 0 0 white;
-    opacity: 100%;
     filter: grayscale(0%);
 }
 
@@ -49,7 +48,6 @@
 .quad {
     height: 100%;
     box-shadow: inset 0 0 30px black;
-    opacity: 50%;
     overflow: hidden;
     background-repeat: no-repeat;
     background-color: #1d1f21;
